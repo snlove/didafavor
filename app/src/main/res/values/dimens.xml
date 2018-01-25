@@ -1,0 +1,8 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="drawer_width">240dp</dimen>
+    <dimen name="menu_item_fontSize">18sp</dimen>
+    <dimen name="search_bar_margin">5dp</dimen>
+    <dimen name="movie_title_size">12sp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+</resources>

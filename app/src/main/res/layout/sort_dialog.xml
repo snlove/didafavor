@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/sort_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:orientation="vertical"
+        >
+        <RadioButton
+            android:id="@+id/sort_mostPopular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/most_popular"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            />
+
+        <RadioButton
+            android:id="@+id/sort_highest_rated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/highest_rated"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            />
+
+        <RadioButton
+            android:id="@+id/sort_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/favorites"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            />
+
+
+    </RadioGroup>
+</LinearLayout>

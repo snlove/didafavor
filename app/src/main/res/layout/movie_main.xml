@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_movie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/theme_color_movie_bar"
+        android:fitsSystemWindows="true"
+        android:minHeight="?attr/actionBarSize"
+        app:contentInsetStart="0.0dp"
+        app:titleTextColor="@color/category_item_color"
+        app:layout_scrollFlags="enterAlways|scroll"/>
+
+    <fragment
+        android:id="@+id/fragment_movielisting"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="sn.didafavor.listing.MovieListingFragemnt"
+        tools:layout="@layout/movie_content"
+        />
+
+
+</LinearLayout>

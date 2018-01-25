@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="munu_item_color">#211b1b</color>
+    <color name="category_item_color">#a39d9d</color>
+    <color name="category_head_background">#88282322</color>
+    <color name="theme_color_primary">#ddd71515</color>
+    <color name="theme_color_movie_bar">#201d1d</color>
+    <color name="black_translucent">#99000000</color>
+</resources>

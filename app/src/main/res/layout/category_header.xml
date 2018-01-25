@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/category_head_background"
+    android:layout_height="100dp">
+
+    <ImageView
+        android:id="@+id/iv_personHead"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:src="@mipmap/ic_launcher_round" />
+
+    <TextView
+        android:id="@+id/tv_phone"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:paddingStart="15dp"
+        android:gravity="center_vertical"
+        android:layout_toEndOf="@+id/iv_personHead"
+        android:text="15175084151"
+        tools:ignore="RtlSymmetry" />
+
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_toEndOf="@+id/iv_personHead"
+        android:layout_below="@+id/tv_phone"
+        android:paddingStart="15dp"
+        android:gravity="center_vertical"
+        android:text="@string/person_email"
+        tools:ignore="RtlSymmetry" />
+</RelativeLayout>

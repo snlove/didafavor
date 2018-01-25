@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/a"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/theme_color_primary"
+        android:fitsSystemWindows="true"
+        android:minHeight="?attr/actionBarSize"
+        app:contentInsetStart="0.0dp"
+        app:layout_scrollFlags="enterAlways|scroll">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="match_parent"
+                android:id="@+id/iv_bar_music"
+                android:layout_toStartOf="@+id/iv_bar_net"
+                android:background="@drawable/actionbar_music"
+                android:clickable="true"
+               />
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="match_parent"
+                android:id="@+id/iv_bar_net"
+                android:layout_centerInParent="true"
+                android:background="@drawable/actionbar_disco"
+                android:clickable="true"
+                android:focusable="true" />
+            <ImageView
+                android:layout_width="55dp"
+                android:layout_height="match_parent"
+                android:id="@+id/iv_bar_friends"
+                android:layout_toEndOf="@+id/iv_bar_net"
+                android:background="@drawable/actionbar_friends"
+                android:clickable="true"
+                />
+            <ImageView
+                android:id="@+id/iv_search"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:scaleType="center"
+                android:layout_marginEnd="@dimen/search_bar_margin"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/actionbar_search"
+                />
+
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+     <sn.didafavor.widget.CustomViewPager
+         android:layout_width="match_parent"
+         android:layout_below="@+id/toolbar"
+         android:id="@+id/main_viewpager"
+         android:layout_height="match_parent">
+
+
+     </sn.didafavor.widget.CustomViewPager>
+    <!--<FrameLayout-->
+    <!--android:orientation="vertical"-->
+    <!--android:id="@+id/fragment_container"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_below="@+id/toolbar"-->
+    <!--android:layout_above="@+id/nav_play">-->
+    <!--</FrameLayout>-->
+    <FrameLayout
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bottom_container"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+    <!--<include layout="@layout/bottom_nav"/>-->
+</RelativeLayout>
