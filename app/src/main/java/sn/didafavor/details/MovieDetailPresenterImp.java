@@ -5,6 +5,12 @@ package sn.didafavor.details;
  */
 
 public class MovieDetailPresenterImp implements MovieDetailPresenter {
+
+    private MovieDetailInteractor movieDetailInteractor;
+
+    public MovieDetailPresenterImp(MovieDetailInteractor movieDetailInteractor){
+
+    }
     @Override
     public void showDetails() {
 

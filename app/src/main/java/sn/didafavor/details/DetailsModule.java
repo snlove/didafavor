@@ -2,6 +2,7 @@ package sn.didafavor.details;
 
 import dagger.Module;
 import dagger.Provides;
+import sn.didafavor.network.TmdbWebService;
 
 /**
  * Created by pc on 2018/4/13.
@@ -11,13 +12,11 @@ public class DetailsModule {
 
     @Provides
     @DetailScope
-    public MovieDetailPresenter provideMovieDetailPresenter(){
-        return new MovieDetailPresenterImp();
+    public MovieDetailPresenter providePresenter(MovieDetailInteractor movieDetailInteractor){
+        return new MovieDetailPresenterImp(movieDetailInteractor);
     }
 
-    @Provides
-    @DetailScope
-    public  MovieDetailInteractor provideInteractor(){
-        return  new MovieDetailInteractorImp();
+    MovieDetailInteractor provideInteractor(TmdbWebService tmdbWebService) {
+        return new MovieDetailInteractorImp(tmdbWebService);
     }
 }
