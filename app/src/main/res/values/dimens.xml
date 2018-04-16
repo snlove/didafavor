@@ -5,4 +5,6 @@
     <dimen name="search_bar_margin">5dp</dimen>
     <dimen name="movie_title_size">12sp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="movieDetails_appBarHeight">280dp</dimen>
+    <dimen name="appbar_elevation">4dp</dimen>
 </resources>
