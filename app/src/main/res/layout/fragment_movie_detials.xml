@@ -1,108 +1,136 @@
-<android.support.design.widget.CoordinatorLayout
-    android:id="@+id/main_content"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_alignParentTop="true"
-    >
-<android.support.design.widget.AppBarLayout
-    android:id="@+id/appBar"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/movieDetails_appBarHeight"
-    android:elevation="@dimen/appbar_elevation"
-    tools:targetApi="lollipop">
-<android.support.design.widget.CollapsingToolbarLayout
-    android:id="@+id/collapsing_toolbar"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
-    >
-<ImageView
-    android:id="@+id/iv_movie_poster"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:src="@drawable/movie"
-    />
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    android:layout_alignParentTop="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:layout_collapseMode="pin"
-        />
+        android:layout_height="@dimen/movieDetails_appBarHeight"
+        android:elevation="@dimen/appbar_elevation"
+        tools:targetApi="lollipop">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/iv_movie_poster"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:fitsSystemWindows="true"
+                tools:src="@drawable/movie" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                android:theme="@style/AppTheme.Toolbar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                />
 
 
-</android.support.design.widget.CollapsingToolbarLayout>
+        </android.support.design.widget.CollapsingToolbarLayout>
 
 
-</android.support.design.widget.AppBarLayout>
-<android.support.v4.widget.NestedScrollView
-    android:id="@+id/movie_scroll_container"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_weight="1"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
-    <LinearLayout
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/movie_scroll_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:id="@+id/ll_detial_container"
-        >
-        <TextView
-            android:id="@+id/tv_movie_title"
+        android:layout_weight="1"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:id="@+id/ll_detial_container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="Welcome to the jungle"
-            />
+            android:layout_height="match_parent"
+            android:background="@android:color/black"
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_movie_release_date"
-            tools:text="release Date : 2017-12-08"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_movie_rate"
-            tools:text="6.4/10.0"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_movie_summary_label"
-            android:text="@string/tv_movie_summary_label"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_movie_summary_content"
-            tools:text="dddddddddddddd dddddddd   helo ddd1   dkkj"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_movie_trailers_label"
-            android:text="@string/tv_movie_trailers_label"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_movie_reviews_label"
-            android:text="@string/tv_movie_reviews_label"
-            />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tv_movie_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/movie_name_size"
+                android:textColor="@android:color/white"
+                android:layout_margin="@dimen/movie_name_margin"
+                tools:text="Welcome to the jungle" />
+
+            <TextView
+                android:id="@+id/tv_movie_release_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/movie_name_margin"
+                android:layout_marginEnd="@dimen/movie_name_margin"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@android:color/white"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                tools:text="release Date : 2017-12-08" />
+
+            <TextView
+                android:id="@+id/tv_movie_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/movie_name_margin"
+                android:layout_marginEnd="@dimen/movie_name_margin"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@android:color/white"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                tools:text="6.4/10.0" />
+
+            <TextView
+                android:id="@+id/tv_movie_summary_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/movie_summary_marginTop"
+                android:layout_marginStart="@dimen/movie_name_margin"
+                android:layout_marginEnd="@dimen/movie_name_margin"
+                android:textColor="@android:color/white"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:text="@string/tv_movie_summary_label" />
+
+            <TextView
+                android:id="@+id/tv_movie_summary_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/movie_name_margin"
+                android:textColor="@android:color/white"
+                android:fontFamily="sans-serif-light"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:lineSpacingMultiplier="1.2"
+                tools:text="dddddddddddddd dddddddd   helo ddd1   dkkj" />
+
+            <include
+                layout="@layout/trailers_and_reviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/movie_name_size"
+                />
+        </LinearLayout>
 
 
-</android.support.v4.widget.NestedScrollView>
+    </android.support.v4.widget.NestedScrollView>
 
-
-
-
-
-
-
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/favorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        app:elevation="6dp"
+        app:layout_anchor="@id/scrolling_container"
+        app:layout_anchorGravity="bottom|right|end"
+        app:pressedTranslationZ="12dp"
+        app:rippleColor="@android:color/white" />
 
 
 </android.support.design.widget.CoordinatorLayout>

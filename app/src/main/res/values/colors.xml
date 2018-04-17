@@ -9,4 +9,5 @@
     <color name="theme_color_primary">#ddd71515</color>
     <color name="theme_color_movie_bar">#201d1d</color>
     <color name="black_translucent">#99000000</color>
+    <color name="movie_name_color">#f5f3f3</color>
 </resources>

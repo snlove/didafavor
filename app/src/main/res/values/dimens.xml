@@ -7,4 +7,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="movieDetails_appBarHeight">280dp</dimen>
     <dimen name="appbar_elevation">4dp</dimen>
+    <dimen name="movie_name_size">32sp</dimen>
+    <dimen name="movie_name_margin">16dp</dimen>
+    <dimen name="movie_summary_marginTop">32dp</dimen>
 </resources>
