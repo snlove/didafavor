@@ -11,6 +11,7 @@
     <string name="category_movie">movie</string>
     <string name="movie_detail">movie detail</string>
     <string name="movie_title">MovieGuide</string>
+    <string name="movie_details">MovieDetails</string>
     <string name="summary">summary</string>
     <string name="loading_movies">loading movie</string>
     <string name="movie_menu_sort">sort movie</string>

@@ -29,4 +29,13 @@
         <item name="actionMenuTextColor">@android:color/white</item>
     </style>
 
+    <style name="CollapsedToolbar">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="ExpandedToolbar">
+        <item name="android:textColor">@android:color/transparent</item>
+    </style>
+
 </resources>

@@ -5,6 +5,8 @@ package sn.didafavor;
 import javax.inject.Singleton;
 
 import dagger.Component;
+import sn.didafavor.details.DetailComponent;
+import sn.didafavor.details.DetailsModule;
 import sn.didafavor.listing.ListingComponent;
 import sn.didafavor.listing.ListingModule;
 import sn.didafavor.network.NetWorkModule;
@@ -16,7 +18,7 @@ import sn.didafavor.network.NetWorkModule;
 @Component(modules={AppModule.class,NetWorkModule.class})
 public interface AppComponent {
 
-//    DetailsComponent plus(DetailsModule detailsModule);
+    DetailComponent plus(DetailsModule detailsModule);
 
     ListingComponent plus(ListingModule listingModule);
 }

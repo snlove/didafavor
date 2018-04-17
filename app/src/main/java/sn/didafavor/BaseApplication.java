@@ -3,6 +3,8 @@ package sn.didafavor;
 import android.app.Application;
 import android.os.StrictMode;
 
+import sn.didafavor.details.DetailComponent;
+import sn.didafavor.details.DetailsModule;
 import sn.didafavor.listing.ListingComponent;
 import sn.didafavor.listing.ListingModule;
 import sn.didafavor.network.NetWorkModule;
@@ -15,6 +17,7 @@ public class BaseApplication extends Application
 {
     private AppComponent appComponent;
     private ListingComponent listingComponent;
+    private DetailComponent detailComponent;
 
     @Override
     public void onCreate()
@@ -48,5 +51,18 @@ public class BaseApplication extends Application
     public ListingComponent getListingComponent()
     {
         return listingComponent;
+    }
+
+    public  DetailComponent createDetailComponent(){
+        detailComponent = appComponent.plus(new DetailsModule());
+        return  detailComponent;
+    }
+
+    public  void  releaseDetailComponent(){
+        detailComponent = null;
+    }
+
+    public  DetailComponent getDetailComponent() {
+        return  detailComponent;
     }
 }
