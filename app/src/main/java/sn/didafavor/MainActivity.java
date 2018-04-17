@@ -14,6 +14,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -125,8 +127,8 @@ public class MainActivity extends AppCompatActivity {
         customViewPagerAdapter.addFragment(new TabNetFragment());
         customViewPagerAdapter.addFragment(new TabNetFragment());
         viewPager.setAdapter(customViewPagerAdapter);
-        viewPager.setCurrentItem(1);
-        bar_music.setSelected(true);
+        viewPager.setCurrentItem(0);
+//        bar_music.setSelected(true);
     }
     private void initListeners(){
         recyclerView.addOnItemTouchListener(new CategoryItemListeners(getBaseContext(), new CategoryItemListeners.ItemClickListeners() {
@@ -222,5 +224,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Glide.with(this).onStart();
+    }
 }

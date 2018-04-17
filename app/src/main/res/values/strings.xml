@@ -18,4 +18,7 @@
     <string name="highest_rated">hightest rated</string>
     <string name="favorites">favorites</string>
     <string name="sort_by">Sort by</string>
+    <string name="tv_movie_summary_label">Summary</string>
+    <string name="tv_movie_trailers_label">Trailers</string>
+    <string name="tv_movie_reviews_label">Reviews</string>
 </resources>

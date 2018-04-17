@@ -49,8 +49,49 @@
         android:orientation="vertical"
         android:id="@+id/ll_detial_container"
         >
+        <TextView
+            android:id="@+id/tv_movie_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Welcome to the jungle"
+            />
 
-        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_movie_release_date"
+            tools:text="release Date : 2017-12-08"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_movie_rate"
+            tools:text="6.4/10.0"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_movie_summary_label"
+            android:text="@string/tv_movie_summary_label"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_movie_summary_content"
+            tools:text="dddddddddddddd dddddddd   helo ddd1   dkkj"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_movie_trailers_label"
+            android:text="@string/tv_movie_trailers_label"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_movie_reviews_label"
+            android:text="@string/tv_movie_reviews_label"
+            />
     </LinearLayout>
 
 
