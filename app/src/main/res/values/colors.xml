@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#4b708c</color>
     <color name="munu_item_color">#211b1b</color>
     <color name="category_item_color">#a39d9d</color>
     <color name="category_head_background">#88282322</color>

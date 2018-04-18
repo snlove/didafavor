@@ -11,9 +11,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import org.w3c.dom.Text;
 
@@ -25,6 +29,7 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import sn.didafavor.Api;
 import sn.didafavor.BaseApplication;
 import sn.didafavor.Constants;
 import sn.didafavor.R;
@@ -61,6 +66,8 @@ public class MovieDetailFragment extends Fragment implements MovieDetailView, Vi
     TextView movie_description;
     @BindView(R.id.tv_movie_trailers_label)
     TextView movie_trailers;
+    @BindView(R.id.trailers_containers)
+    HorizontalScrollView tailers_containers;
     @BindView(R.id.trailers)
     LinearLayout trailers;
     @BindView(R.id.tv_movie_reviews_label)
@@ -126,11 +133,7 @@ public class MovieDetailFragment extends Fragment implements MovieDetailView, Vi
 
     private void setToolBar() {
 
-        collapsingToolbar.setContentScrimColor(ContextCompat.getColor(getContext(), R.color.colorPrimary));
-        collapsingToolbar.setTitle(getString(R.string.movie_details));
-        collapsingToolbar.setCollapsedTitleTextAppearance(R.style.CollapsedToolbar);
-        collapsingToolbar.setExpandedTitleTextAppearance(R.style.ExpandedToolbar);
-        collapsingToolbar.setTitleEnabled(true);
+
 
         collapsing_toolbar.setContentScrimColor(ContextCompat.getColor(getActivity(),R.color.colorPrimary));
         collapsing_toolbar.setTitle(getString(R.string.movie_details));
@@ -151,16 +154,73 @@ public class MovieDetailFragment extends Fragment implements MovieDetailView, Vi
 
     @Override
     public void showDetails(Movie movie) {
+        Glide.with(this).load(Api.getPosterPath(movie.getPosterPath())).into(movie_poster);
+        movie_title.setText(movie.getTitle());
+        movie_year.setText(String.format(getString(R.string.release_date),movie.getReleaseDate()));
+        movie_rate.setText(String.format(getString(R.string.movie_rate),movie.getVoteAverage()));
+        movie_description.setText(movie.getOverview());
+        moviewDetailsPresenter.showTralers(movie);
+        moviewDetailsPresenter.showReviews(movie);
+
 
     }
 
     @Override
     public void showTralers(List<Video> videos) {
+        if (!videos.isEmpty()) {
+            trailers.setVisibility(View.VISIBLE);
+            tailers_containers.setVisibility(View.VISIBLE);
+            movie_trailers.setVisibility(View.VISIBLE);
+            trailers.removeAllViews();
+
+            RequestOptions options = new RequestOptions()
+                    .placeholder(R.color.colorPrimary)
+                    .centerCrop()
+                    .override(150, 150);
+
+            LayoutInflater inflater = getActivity().getLayoutInflater();
+
+            for (Video video : videos) {
+                View thumbContainers = inflater.inflate(R.layout.video, trailers, false);
+                ImageView thumbView = ButterKnife.findById(thumbContainers, R.id.iv_thumb_video);
+                Glide.with(getActivity()).load(Video.getThumbnailUrl(video)).apply(options).into(thumbView);
+                trailers.addView(thumbView);
+
+            }
+        } else {
+            trailers.setVisibility(View.GONE);
+            tailers_containers.setVisibility(View.GONE);
+            movie_trailers.setVisibility(View.GONE);
+        }
 
     }
 
     @Override
-    public void showReviews(List<Review> reviews) {
+    public void showReviews(List<Review> reviewList) {
+        if (reviewList.isEmpty()) {
+            movie_reviews.setVisibility(View.GONE);
+            reviews.setVisibility(View.GONE);
+
+        } else {
+            movie_reviews.setVisibility(View.VISIBLE);
+            reviews.setVisibility(View.VISIBLE);
+
+            reviews.removeAllViews();
+
+            LayoutInflater inflater = getActivity().getLayoutInflater();
+
+            for(Review review : reviewList){
+
+                ViewGroup reviewContainers = (ViewGroup) inflater.inflate(R.layout.reviews, reviews, false);
+                TextView reviewAuthor = ButterKnife.findById(reviewContainers, R.id.tv_review_author);
+                TextView reviewContent = ButterKnife.findById(reviewContainers, R.id.tv_review_content);
+                reviewAuthor.setText(review.getAuthor());
+                reviewContent.setText(review.getContent());
+                reviewContent.setOnClickListener(this);
+                reviews.addView(reviewContainers);
+
+            }
+        }
 
     }
 

@@ -22,4 +22,6 @@
     <string name="tv_movie_summary_label">Summary</string>
     <string name="tv_movie_trailers_label">Trailers</string>
     <string name="tv_movie_reviews_label">Reviews</string>
+    <string name="release_date">Release Date: %s</string>
+    <string name="movie_rate">Rate: %d/10</string>
 </resources>

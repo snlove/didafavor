@@ -5,11 +5,16 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
+import sn.didafavor.Api;
+import sn.didafavor.Constants;
+
 /**
  * Created by pc on 2018/4/13.
  */
 
 public class Video implements Parcelable {
+
+    public static final String SITE_YOUTUBE = "YouTube";
 
     private String id;
     private String name;
@@ -57,6 +62,14 @@ public class Video implements Parcelable {
         dest.writeString(type);
     }
 
+
+    public static String getThumbnailUrl(Video video) {
+        if (SITE_YOUTUBE.equalsIgnoreCase(video.getSite())) {
+            return String.format(Api.YOUTUBE_VIDEO_URL, video.getVideoId());
+        } else {
+            return Constants.EMPTY;
+        }
+    }
 
     public String getId() {
         return id;

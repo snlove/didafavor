@@ -11,6 +11,7 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="colorBackground">@color/black_translucent</item>
     </style>
 
     <style name="AppTheme.Launch">
@@ -37,5 +38,7 @@
     <style name="ExpandedToolbar">
         <item name="android:textColor">@android:color/transparent</item>
     </style>
+
+
 
 </resources>
