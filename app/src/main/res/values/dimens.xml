@@ -11,4 +11,5 @@
     <dimen name="movie_name_margin">16dp</dimen>
     <dimen name="movie_summary_marginTop">32dp</dimen>
     <dimen name="margin_small_top">2dp</dimen>
+    <dimen name="margin_medium">8dp</dimen>
 </resources>

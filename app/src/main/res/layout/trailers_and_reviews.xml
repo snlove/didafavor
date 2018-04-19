@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/tv_movie_trailers_label"
         android:text="@string/tv_movie_trailers_label"
+        android:textColor="@android:color/white"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         android:visibility="gone"
         />

@@ -21,6 +21,8 @@ import sn.didafavor.fragments.MovieDetailFragment;
 import sn.didafavor.listing.MovieListingFragemnt;
 import sn.didafavor.listing.sorting.SortingDialogFragment;
 
+import static sn.didafavor.Constants.Detail_Fragment;
+
 /**
  * Created by pc on 2018/1/16.
  */
@@ -29,7 +31,6 @@ public class MovieListingActivity extends AppCompatActivity implements MovieList
 
     private static  final int CONTENT_ID = 111;
     private boolean tabPanelModel = false;  // check the land oriention
-    private static String detail_fragment = "Details_Fragment";
 
 
 
@@ -99,7 +100,7 @@ public class MovieListingActivity extends AppCompatActivity implements MovieList
     private void loadDetailFragment(Movie movie){
         MovieDetailFragment detailFragment = new MovieDetailFragment();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.movie_details_container,detailFragment,detail_fragment);
+        transaction.replace(R.id.movie_details_container,detailFragment,Detail_Fragment);
         transaction.commit();
     }
 
@@ -107,7 +108,7 @@ public class MovieListingActivity extends AppCompatActivity implements MovieList
         Intent intent = new Intent();
         intent.setAction("com.movie.detail_activity");
         Bundle bundle = new Bundle();
-        bundle.putParcelable(detail_fragment,movie);
+        bundle.putParcelable(Detail_Fragment,movie);
         intent.putExtra(Constants.MOVIE,bundle);
         if (intent.resolveActivity(getPackageManager()) != null){
             startActivity(intent);

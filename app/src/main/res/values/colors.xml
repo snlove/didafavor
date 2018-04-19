@@ -10,4 +10,13 @@
     <color name="theme_color_movie_bar">#201d1d</color>
     <color name="black_translucent">#99000000</color>
     <color name="movie_name_color">#f5f3f3</color>
+
+      <!--movie theme-->
+    <color name="movie_colorPrimary">#0b0b0a</color>
+    <color name="movie_colorPrimaryDark">#1e1e1e</color>
+    <color name="movie_colorAccent">#ffc701</color>
+
+    <color name="black_translucent_60">#99000000</color>
+
+    <color name="window_background">#282828</color>
 </resources>

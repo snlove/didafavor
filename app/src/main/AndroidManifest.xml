@@ -27,14 +27,13 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.movie" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:name=".details.MovieDetailActivity"
-            android:label="@string/category_movie"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:label="@string/movie_detail"
+            android:theme="@style/Movie_Theme">
             <intent-filter>
                 <action android:name="com.movie.detail_activity" />
                 <category android:name="android.intent.category.DEFAULT" />

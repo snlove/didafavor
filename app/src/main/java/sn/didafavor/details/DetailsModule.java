@@ -16,6 +16,8 @@ public class DetailsModule {
         return new MovieDetailPresenterImp(movieDetailInteractor);
     }
 
+    @Provides
+    @DetailScope
     MovieDetailInteractor provideInteractor(TmdbWebService tmdbWebService) {
         return new MovieDetailInteractorImp(tmdbWebService);
     }

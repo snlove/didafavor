@@ -85,7 +85,7 @@ public class MovieDetailFragment extends Fragment implements MovieDetailView, Vi
 
     }
 
-    public MovieDetailFragment getInstance(Movie movie) {
+    public static  MovieDetailFragment getInstance(Movie movie) {
         Bundle args = new Bundle();
         args.putParcelable(Constants.MOVIE,movie);
         MovieDetailFragment movieDetailFragment = new MovieDetailFragment();
@@ -135,7 +135,7 @@ public class MovieDetailFragment extends Fragment implements MovieDetailView, Vi
 
 
 
-        collapsing_toolbar.setContentScrimColor(ContextCompat.getColor(getActivity(),R.color.colorPrimary));
+        collapsing_toolbar.setContentScrimColor(ContextCompat.getColor(getActivity(),R.color.movie_colorPrimary));
         collapsing_toolbar.setTitle(getString(R.string.movie_details));
         collapsing_toolbar.setCollapsedTitleTextAppearance(R.style.CollapsedToolbar);
         collapsing_toolbar.setExpandedTitleTextAppearance(R.style.ExpandedToolbar);
@@ -154,10 +154,10 @@ public class MovieDetailFragment extends Fragment implements MovieDetailView, Vi
 
     @Override
     public void showDetails(Movie movie) {
-        Glide.with(this).load(Api.getPosterPath(movie.getPosterPath())).into(movie_poster);
+        Glide.with(this).load(Api.getPosterPath(movie.getBackdropPath())).into(movie_poster);
         movie_title.setText(movie.getTitle());
         movie_year.setText(String.format(getString(R.string.release_date),movie.getReleaseDate()));
-        movie_rate.setText(String.format(getString(R.string.movie_rate),movie.getVoteAverage()));
+        movie_rate.setText(String.format(getString(R.string.movie_rate),String.valueOf(movie.getVoteAverage())));
         movie_description.setText(movie.getOverview());
         moviewDetailsPresenter.showTralers(movie);
         moviewDetailsPresenter.showReviews(movie);

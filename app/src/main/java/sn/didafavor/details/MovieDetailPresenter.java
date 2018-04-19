@@ -2,7 +2,7 @@ package sn.didafavor.details;
 
 import sn.didafavor.data.Movie;
 
-/**
+/** sn
  * Created by pc on 2018/3/16.
  */
 

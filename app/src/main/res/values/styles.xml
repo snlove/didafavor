@@ -3,15 +3,22 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/movie_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/movie_colorPrimaryDark</item>
+        <item name="colorAccent">@color/movie_colorAccent</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="colorBackground">@color/black_translucent</item>
+    </style>
+
+    <style name="Movie_Theme" parent="AppTheme.NoActionBar">
+        <item name="colorPrimary">@color/movie_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/movie_colorPrimaryDark</item>
+        <item name="colorAccent">@color/movie_colorAccent</item>
+        <item name="android:windowBackground">@color/window_background</item>
+        <item name="android:dialogTheme">@style/TitledDialog</item>
     </style>
 
     <style name="AppTheme.Launch">
@@ -25,6 +32,9 @@
 
 
     <style name="AppTheme.Toolbar" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/movie_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/movie_colorPrimaryDark</item>
+        <item name="colorAccent">@color/movie_colorAccent</item>
         <item name="android:textColorPrimary">@android:color/white</item>
         <item name="android:textColorSecondary">@android:color/white</item>
         <item name="actionMenuTextColor">@android:color/white</item>
@@ -39,6 +49,9 @@
         <item name="android:textColor">@android:color/transparent</item>
     </style>
 
+    <style name="TitledDialog" parent="@style/Theme.AppCompat.Light.Dialog">
+        <item name="android:windowNoTitle">false</item>
+    </style>
 
 
 </resources>

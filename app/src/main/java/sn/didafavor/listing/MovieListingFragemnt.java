@@ -102,8 +102,8 @@ public class MovieListingFragemnt extends Fragment implements MoviesListingView 
         rv.addOnItemTouchListener(new MovieItemListeners(getContext(), new MovieItemListeners.MovieItemClick() {
             @Override
             public void onClick(View view, int postion) {
-                Toast.makeText(getContext(), "enter movie detail", Toast.LENGTH_SHORT).show();
-//                onMovieClicked(lists.get(postion));
+                //Toast.makeText(getContext(), "enter movie detail", Toast.LENGTH_SHORT).show();
+                onMovieClicked(lists.get(postion));
             }
         }));
     }
