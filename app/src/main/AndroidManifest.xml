@@ -37,7 +37,11 @@
             <intent-filter>
                 <action android:name="com.movie.detail_activity" />
                 <category android:name="android.intent.category.DEFAULT" />
+
             </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".listing.MovieListingActivity"/>
         </activity>
     </application>
 

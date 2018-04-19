@@ -154,7 +154,7 @@ public class MovieDetailFragment extends Fragment implements MovieDetailView, Vi
 
     @Override
     public void showDetails(Movie movie) {
-        Glide.with(this).load(Api.getPosterPath(movie.getBackdropPath())).into(movie_poster);
+        Glide.with(this).load(Api.getBackDropPath(movie.getBackdropPath())).into(movie_poster);
         movie_title.setText(movie.getTitle());
         movie_year.setText(String.format(getString(R.string.release_date),movie.getReleaseDate()));
         movie_rate.setText(String.format(getString(R.string.movie_rate),String.valueOf(movie.getVoteAverage())));
